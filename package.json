@@ -1,0 +1,28 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Making a CRUD blog site",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcustovic/blog.git"
+  },
+  "author": "Dominik Čustović",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dcustovic/blog/issues"
+  },
+  "homepage": "https://github.com/dcustovic/blog#readme",
+  "dependencies": {
+    "ejs": "^3.1.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.12"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
