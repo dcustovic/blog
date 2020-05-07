@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('../config/database')
+const marked = require('marked');
 
 const Article = db.define('article', {
     title: {
@@ -22,5 +23,6 @@ const Article = db.define('article', {
         default: Date.now
     }
 });
+
 
 module.exports = Article;

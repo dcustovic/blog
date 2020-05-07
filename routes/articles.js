@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../config/database')
-const Article = require('../models/Article')
+const db = require('../config/database');
+const Article = require('../models/Article');
+
 
 router.get('/new', (req, res) => {
     res.render('articles/new', { article: new Article() })
@@ -26,6 +27,14 @@ router.post('/', async (req, res) => {
         console.log(e)
         res.render('articles/new', { article: article });
     }
+});
+
+router.delete('/:id', async (req, res) => {
+    await Article.findByPk(req.params.id).then((article) => {
+        return article.destroy();
+    }).then(() => {
+        res.redirect('/')
+    });
 });
 
 module.exports = router

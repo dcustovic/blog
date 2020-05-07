@@ -23,6 +23,10 @@
                         <%= article.description %>
                     </div>
                     <a href="/articles/<%= article.id %>" class="btn btn-secondary">Read More</a>
+
+                    <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
                 </div>
             </div>
         <% }) %>

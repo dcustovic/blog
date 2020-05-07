@@ -2,6 +2,7 @@ const express = require('express');
 const server = express();
 const articleRouter = require('./routes/articles');
 const Article = require('./models/Article');
+const methodOverride = require('method-override');
 
 // database
 const db = require('./config/database')
@@ -16,6 +17,7 @@ server.set('view engine', 'ejs');
 
 // access all of the different params from our article form inside article route by accessing req.body.title or req.body.description
 server.use(express.urlencoded({ extended: false }));
+server.use(methodOverride('_method'));
 
 server.get('/', async (req, res) => {
     const articles = await Article.findAll({
