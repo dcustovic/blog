@@ -10,17 +10,17 @@
         <h1 class="mb-4">Blog Articles</h1>
         <a href="/articles/new" class="btn btn-success">New Article</a>
 
-        <% articles.forEach(x => { %>
+        <% clanak.forEach(article => { %>
             <div class="card mt-4">
                 <div class="card-body">
-                    <h4 class="card-title"><%= x.title %></h4>
+                    <h4 class="card-title"><%= article.title %></h4>
 
                     <div class="card-subtitle text-muted mb-2">
-                        <%= x.createdAt.toLocaleDateString() %>
+                        <%= article.createdAt %>
                     </div>
 
                     <div class="card-text mb-2">
-                        <%= x.description %>
+                        <%= article.description %>
                     </div>
                 </div>
             </div>
@@ -28,3 +28,5 @@
     </div>
 </body>
 </html>
+
+

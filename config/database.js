@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-module.exports = new Sequelize('blog', 'root', '', {
+module.exports = new Sequelize('blog', 'root', null, {
     host: 'localhost',
     dialect: 'mysql',
   
@@ -10,3 +10,5 @@ module.exports = new Sequelize('blog', 'root', '', {
       idle: 10000
     },
   });
+
+  

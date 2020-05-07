@@ -16,9 +16,11 @@ const Article = db.define('article', {
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    updatedAt: {
+        type: Date,
+        default: Date.now
     }
-}, {
-    timestamps: false
 });
 
 module.exports = Article;
