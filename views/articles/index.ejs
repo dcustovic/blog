@@ -2,35 +2,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
     <title>Blog</title>
 </head>
 <body>
-    <div class="container">
-        <h1 class="mb-4">Blog Articles</h1>
-        <a href="/articles/new" class="btn btn-success">New Article</a>
+    <div id="main">
 
-        <% clanak.forEach(article => { %>
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h4 class="card-title"><%= article.title %></h4>
+        <!-- Sidebar -->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+            <a href="/">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+        
 
-                    <div class="card-subtitle text-muted mb-2">
-                        <%= article.createdAt %>
+        <!-- Page content-->
+        <div class="page-content-container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776</span>
+                        <h1 class="mb-4">Blog Articles</h1>
+                        <a href="/articles/new" class="btn btn-success">New Article</a>
+
+                        <% clanak.forEach(article => { %>
+                            <div class="card mt-4">
+                                <div class="card-body">
+                                    <h4 class="card-title"><%= article.title %></h4>
+
+                                    <div class="card-subtitle text-muted mb-2">
+                                        <%= article.createdAt %>
+                                    </div>
+
+                                    <div class="card-text mb-2">
+                                        <%= article.description %>
+                                    </div>
+                                    <a href="/articles/<%= article.id %>" class="btn btn-secondary">Read More</a>
+
+                                    <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                                </div>
+                            </div>
+                        <% }) %>
                     </div>
-
-                    <div class="card-text mb-2">
-                        <%= article.description %>
-                    </div>
-                    <a href="/articles/<%= article.id %>" class="btn btn-secondary">Read More</a>
-
-                    <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
                 </div>
             </div>
-        <% }) %>
+        </div>
     </div>
+
+    <script src="/js/custom.js"></script>
 </body>
 </html>
 

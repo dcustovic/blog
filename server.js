@@ -15,9 +15,11 @@ db.authenticate()
 // view engine is going to covert ejs code to html code
 server.set('view engine', 'ejs');
 
+
 // access all of the different params from our article form inside article route by accessing req.body.title or req.body.description
 server.use(express.urlencoded({ extended: false }));
 server.use(methodOverride('_method'));
+server.use(express.static(__dirname + '/public'));
 
 server.get('/', async (req, res) => {
     const articles = await Article.findAll({
