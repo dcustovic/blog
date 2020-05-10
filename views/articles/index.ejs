@@ -7,43 +7,37 @@
     <title>Blog</title>
 </head>
 <body>
-    <div id="main">
-        <!-- Sidebar -->
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-        </div>
-        <!-- Page content-->
-        <div class="page-content-container">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col">
-                        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776</span>
-                        <h1 class="mb-4">Blog Articles</h1>
-                        <a href="/articles/new" class="btn btn-success">New Article</a>
+    <div class="container-fluid">
+        <div id="main">
+            <!-- Sidebar -->
+            <%- include('../partials/_navigation') %>
+            
+            <!-- Page content-->
+            <div class="row">
+                <div class="col">
+                    <h1 class="mb-4">Blog Articles</h1>
+                    <a href="/articles/new" class="btn btn-success">New Article</a>
 
-                        <% clanak.forEach(article => { %>
-                            <div class="card mt-4">
-                                <div class="card-body">
-                                    <h4 class="card-title"><%= article.title %></h4>
+                    <% clanak.forEach(article => { %>
+                        <div class="card mt-4">
+                            <div class="card-body">
+                                <h4 class="card-title"><%= article.title %></h4>
 
-                                    <div class="card-subtitle text-muted mb-2">
-                                        <%= article.createdAt %>
-                                    </div>
-
-                                    <div class="card-text mb-2">
-                                        <%= article.description %>
-                                    </div>
-                                    <a href="/articles/<%= article.id %>" class="btn btn-secondary">Read More</a>
-
-                                    <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
+                                <div class="card-subtitle text-muted mb-2">
+                                    <%= article.createdAt %>
                                 </div>
+
+                                <div class="card-text mb-2">
+                                    <%= article.description %>
+                                </div>
+                                <a href="/articles/<%= article.id %>" class="btn btn-secondary mt-2">Read More</a>
+
+                                <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                                <button type="submit" class="btn btn-danger mt-2">Delete</button>
+                            </form>
                             </div>
-                        <% }) %>
-                    </div>
+                        </div>
+                    <% }) %>
                 </div>
             </div>
         </div>
