@@ -38,8 +38,6 @@ router.delete('/:id', async (req, res) => {
     });
 });
 
-
-
 function saveArticleAndRedirect(path) {
     return async (req, res) => {
         let article = req.article

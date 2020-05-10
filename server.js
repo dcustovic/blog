@@ -31,6 +31,10 @@ server.get('/', async (req, res) => {
     res.render('articles/index', { clanak: articles });
 });
 
+server.get('/about', (req, res) => {
+    res.render('about')
+});
+
 // articles routes
 server.use('/articles', articleRouter);
 

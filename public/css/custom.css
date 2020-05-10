@@ -4,7 +4,7 @@ body {
 
 .sidenav {
   height: 100%;
-  width: 0;
+  width: 0px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -18,7 +18,7 @@ body {
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   color: #818181;
   display: block;
   transition: 0.3s;
@@ -31,9 +31,8 @@ body {
 .sidenav .closebtn {
   position: absolute;
   top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+  right: 20px;
+  font-size: 30px;
 }
 
 #main {
@@ -41,7 +40,11 @@ body {
   padding: 16px;
 }
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
+@media screen and (max-width: 600px) {
+
+  .sidenav {
+    padding-top: 75px;
+    background-color: lightblue;
+  }
   .sidenav a {font-size: 18px;}
 }
