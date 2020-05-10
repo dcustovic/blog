@@ -2,12 +2,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/custom.css">
     <title>Blog</title>
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container">
         <div id="main">
             <!-- Sidebar -->
             <%- include('../partials/_navigation') %>
@@ -15,9 +16,12 @@
             <!-- Page content-->
             <div class="row">
                 <div class="col">
-                    <h1 class="mb-4">Blog Articles</h1>
-                    <a href="/articles/new" class="btn btn-success">New Article</a>
-
+                    
+                    <h1 class="mb-4 position-absolute" id="naslov">Blog</h1>
+                    <div class="text-right position-relative" id="dodaj">
+                        <a href="/articles/new" class="btn btn-primary ">New Article</a>
+                    </div>
+                    
                     <% clanak.forEach(article => { %>
                         <div class="card mt-4">
                             <div class="card-body">
