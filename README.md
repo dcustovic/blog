@@ -1,7 +1,7 @@
 # blog
 Simple CRUD blog using Node, Express, MySQL & EJS
 
-# Setup
+# How to use
 You must have Node.js installed.
 
 • cd blog
